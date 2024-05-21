@@ -1,0 +1,6 @@
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\obj\Debug\net8.0-windows\KursachWPF.csproj.AssemblyReference.cache
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\obj\Debug\net8.0-windows\KursachWPF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\obj\Debug\net8.0-windows\KursachWPF.AssemblyInfoInputs.cache
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\obj\Debug\net8.0-windows\KursachWPF.AssemblyInfo.cs
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\obj\Debug\net8.0-windows\KursachWPF.csproj.CoreCompileInputs.cache
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\obj\Debug\net8.0-windows\KursachWPF.sourcelink.json

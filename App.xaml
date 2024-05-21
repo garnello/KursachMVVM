@@ -1,0 +1,45 @@
+﻿<Application x:Class="KursachWPF.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             StartupUri="/View/LogIn/LogIn.xaml">
+    <Application.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    
+                    <!--// Link on style //-->
+                    <!--// MainWindow //-->
+                    
+                    <ResourceDictionary Source="/Styles/MainWindow/MainWindowPagesStyle/TileButton.xaml"/>
+                    <ResourceDictionary Source="/Styles/MainWindow/MainWindowPagesStyle/AccountStyle.xaml"/>
+                    <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/Button.xaml"/>
+                    <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/Label.xaml"/>
+                    <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/MenuImage.xaml"/>
+                    <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/MenuText.xaml"/>
+                    
+                    <!--// LogInWindow //-->
+                    
+                    <ResourceDictionary Source="Styles/LogInWindow/ButtonLogIn.xaml"/>
+                    <ResourceDictionary Source="Styles/LogInWindow/TextButton.xaml"/>
+                    
+                    <!--// General //-->
+                    
+                    <ResourceDictionary Source="Styles/General/PasswordBox.xaml"/>
+                    <ResourceDictionary Source="Styles/General/TextBox.xaml"/>
+                    <ResourceDictionary Source="Styles/General/CornerButton.xaml"/>
+                    <ResourceDictionary Source="Styles/General/WindowButtonStyle.xaml"/>
+                    <ResourceDictionary Source="Styles/General/WatermarkedTextBox.xaml"/>
+                    
+                    <!--// AccountView //-->
+                    
+                    <ResourceDictionary Source="Styles/MainWindow/AccountStyle/TileButtonAccount.xaml"/>
+                    <ResourceDictionary Source="Styles/MainWindow/AccountStyle/TileInformation.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+                
+                <!--// Colors //-->
+                
+                <SolidColorBrush x:Key="GeneralColor" Color="#080808"/>
+                <SolidColorBrush x:Key="BackgroundColor" Color="#fefefe"/>
+                
+            </ResourceDictionary>
+    </Application.Resources>
+</Application>

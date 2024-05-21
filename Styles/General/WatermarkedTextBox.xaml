@@ -1,0 +1,30 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+    <Style x:Key="WatermarkedEmail" TargetType="TextBox">
+        <Setter Property="Background" Value="Transparent"/>
+        
+        <Style.Resources>
+            <VisualBrush x:Key="Watermarked" AlignmentX="Left" AlignmentY="Center" Stretch="None">
+                <VisualBrush.Visual>
+                    <Label Content="Введите" Foreground="LightGray"
+                           FontSize="18"/>
+                </VisualBrush.Visual>
+            </VisualBrush>
+        </Style.Resources>
+        
+        <Style.Triggers>
+            <Trigger Property="Text" Value="{x:Static sys:String.Empty}">
+                <Setter Property="Background" Value="{StaticResource Watermarked}" />
+            </Trigger>
+            
+            <Trigger Property="Text" Value="{x:Null}">
+                <Setter Property="Background" Value="{StaticResource Watermarked}" />
+            </Trigger>
+            
+            <Trigger Property="IsKeyboardFocused" Value="True">
+                <Setter Property="Background" Value="Transparent" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

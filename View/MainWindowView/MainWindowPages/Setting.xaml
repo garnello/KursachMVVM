@@ -1,0 +1,142 @@
+﻿<UserControl x:Class="KursachWPF.View.MainWindowView.Setting"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="*" d:DesignWidth="*">
+    
+    <ScrollViewer>
+        <Grid Background="{StaticResource BackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="122"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="92"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <!--// Contents //-->
+            
+            <TextBlock Grid.Row="0" Text="Настройки"
+                   Style="{StaticResource Contents}"
+                   Foreground="{StaticResource GeneralColor}"/>
+            
+            <!--// Contents //-->
+            
+            <Grid Grid.Row="1">
+                <TextBlock Text="Оформление" FontSize="40"
+                       Margin="145 30 0 0"
+                       Style="{StaticResource Contents}"/>
+                
+                <!--// Themes //-->
+                
+                <Grid Margin="145 23 0 0"
+                      Width="1100" HorizontalAlignment="Left">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="370"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!--// Image white themes //-->
+                    
+                    <Image Grid.Row="0" Grid.Column="0" 
+                           Source="/Images/SettingsImages/ThemeLight.png"
+                           Width="525" Height="295"
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Left"
+                           Margin="0 75 0 0"/>
+                    
+                    <!--// Image black Themes //-->
+                    
+                    <Image Grid.Row="0" Grid.Column="1" 
+                           Source="/Images/SettingsImages/ThemeDark.png"
+                           VerticalAlignment="Top"
+                           Width="525" Height="295"
+                           HorizontalAlignment="Left"
+                           Margin="0 75  0 0"/>
+                    
+                    <!--// Panel white theme //-->
+                    
+                    <StackPanel Grid.Row="1" Grid.Column="0"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Top">
+                        <TextBlock Text="Светлая" FontSize="32"
+                                   FontWeight="Bold" FontFamily="Inter"
+                                   HorizontalAlignment="Left"/>
+                    
+                        <Button Width="120" Height="32" 
+                                Background="Transparent"
+                                BorderThickness="1"
+                                FontWeight="Medium" FontFamily="Inter"
+                                FontSize="14" Content="Применить"
+                                Margin="275 0 0 0"/>
+                    </StackPanel>
+                    
+                    
+                    <!--// Panel black theme //-->
+                    
+                    <StackPanel Grid.Row="1" Grid.Column="1"
+                                Orientation="Horizontal"
+                                VerticalAlignment="Top">
+                        <TextBlock Text="Тёмная" FontSize="32"
+                                   FontWeight="Bold" FontFamily="Inter"
+                                   Margin="15 0 0 0"/>
+                    
+                        <Button Width="120" Height="32" 
+                                Background="Transparent"
+                                FontWeight="Medium" FontFamily="Inter"
+                                FontSize="14" Content="Применить"
+                                Margin="275 0 0 0"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            
+            <!--// Language //-->
+            <!--// Panel change language //-->
+            
+            <StackPanel Grid.Row="2" Orientation="Horizontal"
+                        Margin="145 52 0 0"
+                        VerticalAlignment="Top">
+                <TextBlock Text="Язык" FontSize="40"
+                           FontFamily="Inter" FontWeight="Bold"/>
+                
+                <Menu Width="175" Height="48"
+                      Margin="32 0 0 0" 
+                      Background="Gray" >
+                    <MenuItem Header="d">
+                        <MenuItem Header="Русский" FontSize="16"
+                                  FontWeight="Bold" FontFamily="inter"/>
+                        <MenuItem Header="Английский" FontSize="16"
+                                  FontWeight="Bold" FontFamily="inter"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+            
+            <!--// Notification //-->
+            <!--// Panel change status notification //-->
+            
+            <StackPanel Grid.Row="3" Orientation="Horizontal"
+                        Margin="145 52 0 0"
+                        VerticalAlignment="Top">
+                <TextBlock Text="Уведомление" FontSize="40"
+                           FontFamily="Inter" FontWeight="Bold"/>
+                
+                <Menu Width="175" Height="48"
+                      Margin="32 0 0 0" 
+                      Background="Gray" >
+                    <MenuItem Header="d">
+                        <MenuItem Header="Включены" FontSize="16"
+                                  FontWeight="Bold" FontFamily="inter"/>
+                        <MenuItem Header="Выключены" FontSize="16"
+                                  FontWeight="Bold" FontFamily="inter"/>
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

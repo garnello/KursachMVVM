@@ -1,0 +1,158 @@
+﻿<UserControl x:Class="KursachWPF.View.MainWindowView.List"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="*" d:DesignWidth="*">
+    <ScrollViewer>
+        <Grid Background="{StaticResource BackgroundColor}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+        
+            <!--// Table of contents block //-->
+            
+            <Grid Grid.Row="0">
+                <TextBlock Text="Списки" FontSize="55"
+                       Foreground="{StaticResource GeneralColor}"
+                       Style="{StaticResource Contents}"/>
+            </Grid>
+            
+            <WrapPanel Grid.Row="1" Orientation="Horizontal" MaxWidth="987"
+                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                       ItemHeight="273" ItemWidth="329" Margin="15 0 15 30">
+                
+                <!--// Employees tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Сотрудники" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Employees.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Accounts tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Аккаунты" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Accounts.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Uniform tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Спецодежда" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/HomeImages/TShirt.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Issuances tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Выдачи" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Issuance.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Returns tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Возвраты" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Returns.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Substitutions tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Замены" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Substitutions.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Reports tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Отчёты" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Reports.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+                
+                <!--// Orders tile button //-->
+                
+                <Grid>
+                    <Button Style="{StaticResource TileButtonStyle}">
+                        <TextBlock Text="Списание" Margin="5 0 0 5"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   FontWeight="Bold"/>
+                    </Button>
+                        
+                    <Image Source="/Images/ListImages/Orders.png"
+                           Margin="0 12 12 0"
+                           Width="77" Height="77" 
+                           VerticalAlignment="Top"
+                           HorizontalAlignment="Right"/>
+                </Grid>
+            </WrapPanel>
+        </Grid>
+    </ScrollViewer>
+    
+</UserControl>
