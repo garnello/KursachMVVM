@@ -5,6 +5,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:menu="clr-namespace:KursachWPF.Components"
         xmlns:mainWindowPages="clr-namespace:KursachWPF.ViewModels.MainWindowVM.MainWindowPages"
+        xmlns:methods="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods"
+        xmlns:components="clr-namespace:KursachWPF.Components"
+        xmlns:local="clr-namespace:KursachWPF.View.MainWindowView.NavigationPanel"
         mc:Ignorable="d"
         Title="Kursach"
         WindowStartupLocation="CenterScreen"
@@ -14,10 +17,10 @@
         Background="Transparent" MouseDown="MovingWindow">
         
         <!--// Link data context //-->
-        
         <Window.DataContext>
-                <mainWindowPages:NavigationVM/>
+                <mainWindowPages:NavigationVM />
         </Window.DataContext>
+       
         
         <Grid>
                 
@@ -90,6 +93,7 @@
                         <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center"
                               Margin="0 0 0 43">
                                 <Button Command="{Binding CurrentAccountCommand}"
+                                        
                                         Style="{StaticResource AccountButton}"/>
                                 
                                 <Button BorderThickness="0" Focusable="False"

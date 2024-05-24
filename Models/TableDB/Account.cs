@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace KursachWPF.Models;
+﻿namespace KursachWPF.Models;
 
 public partial class Account
 {
@@ -16,4 +13,6 @@ public partial class Account
     public string? Name { get; set; }
 
     public string? Email { get; set; }
+
+    public byte[]? Avatar { get; set; }
 }

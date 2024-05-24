@@ -2,7 +2,11 @@
 using System.Windows;
 using System.Windows.Input;
 using KursachWPF.Models;
+using KursachWPF.Models.Context;
+using KursachWPF.View.MainWindowView.AccountView;
 using KursachWPF.ViewModels.Authorization;
+using KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods;
+using KursachWPF.ViewModels.MainWindowVM.MainWindowPages;
 
 namespace KursachWPF.View.MainWindowView.NavigationPanel;
 
@@ -18,8 +22,6 @@ public partial class MainWindow : Window
         InitializeComponent();
         MWindow = this;
         LWindow = new LogIn.LogIn();
-        
-        
         
         string loggedLogin = LoginVM._login;
         var account = db.Accounts.FirstOrDefault(u => u.Login == loggedLogin);

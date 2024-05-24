@@ -1,5 +1,6 @@
 ﻿using System.Windows.Controls;
 using KursachWPF.Models;
+using KursachWPF.Models.Context;
 using KursachWPF.ViewModels.Authorization;
 
 namespace KursachWPF.View.MainWindowView.MainWindowPages;

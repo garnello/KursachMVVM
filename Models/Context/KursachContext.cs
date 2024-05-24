@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 
-namespace KursachWPF.Models;
+namespace KursachWPF.Models.Context;
 
 public partial class KursachContext : DbContext
 {
@@ -44,6 +42,7 @@ public partial class KursachContext : DbContext
             entity.ToTable("account");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Avatar).HasColumnName("avatar");
             entity.Property(e => e.Email)
                 .HasMaxLength(75)
                 .HasColumnName("email");

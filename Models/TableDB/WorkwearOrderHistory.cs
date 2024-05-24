@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace KursachWPF.Models;
 
-public partial class WorkwearOrderHistory
+public class WorkwearOrderHistory
 {
     public int Id { get; set; }
 

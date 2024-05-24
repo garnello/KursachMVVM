@@ -5,6 +5,7 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using KursachWPF.Models;
+using KursachWPF.Models.Context;
 using KursachWPF.ViewModels.Authorization;
 using KursachWPF.ViewModels.General;
 using Newtonsoft.Json;

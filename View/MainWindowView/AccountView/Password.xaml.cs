@@ -1,6 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using KursachWPF.Models;
+using KursachWPF.Models.Context;
 using KursachWPF.ViewModels.Authorization;
 using KursachWPF.ViewModels.General;
 using KursachWPF.ViewModels.MainWindowVM.AccountVM;

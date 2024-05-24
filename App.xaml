@@ -40,6 +40,8 @@
                 <SolidColorBrush x:Key="GeneralColor" Color="#080808"/>
                 <SolidColorBrush x:Key="BackgroundColor" Color="#fefefe"/>
                 
+                
+                
             </ResourceDictionary>
     </Application.Resources>
 </Application>

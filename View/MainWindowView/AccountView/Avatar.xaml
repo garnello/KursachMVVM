@@ -3,9 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:local="clr-namespace:KursachWPF.View.MainWindowView.AccountView"
+             xmlns:methods="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods"
+             xmlns:components="clr-namespace:KursachWPF.Components"
              mc:Ignorable="d"
              d:DesignHeight="*" d:DesignWidth="*">
+    
+    <UserControl.Resources>
+        <components:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
+    </UserControl.Resources>
+    
+    <UserControl.DataContext>
+        <methods:ChangeAvatarMethod/>
+    </UserControl.DataContext>
+    
     <Border Height="407"
             Style="{StaticResource TileInformationStyle}">
         <Grid>
@@ -21,9 +31,10 @@
             <Ellipse Height="190" Width="190"
                      HorizontalAlignment="Left"
                      VerticalAlignment="Center"
-                     Margin="40 34 0 0">
+                     Margin="40 34 0 0" >
                 <Ellipse.Fill>
-                    <ImageBrush ImageSource="../../../Images/Account/Avatar.png"/>
+                    <ImageBrush ImageSource="{Binding UserAccount.Avatar, 
+                    Converter={StaticResource ByteArrayToImageConverter}}"/>
                 </Ellipse.Fill>
             </Ellipse>
             
@@ -38,7 +49,8 @@
             <StackPanel Orientation="Horizontal"
                         VerticalAlignment="Bottom"
                         Width="703">
-                <Button Content="Изменить" 
+                <Button Content="Изменить"
+                        Command="{Binding ChangeAvatarCommand}"
                         Style="{StaticResource CornerButton}"
                         Margin="75 0 0 30"/>
                 
@@ -47,8 +59,8 @@
                            FontFamily="Inter" FontSize="14"
                            FontWeight="Medium" TextAlignment="Right"
                            Margin="37 0 0 30">
-                    Изображение должно быть в формате .png 
-                    или .jpeg, размером не больше 25 мбайт.
+                    Изображение должно быть в формате .png, 
+                    .jpeg или .jpg размером не больше 25 мбайт.
                 </TextBlock>
             </StackPanel>
         </Grid>

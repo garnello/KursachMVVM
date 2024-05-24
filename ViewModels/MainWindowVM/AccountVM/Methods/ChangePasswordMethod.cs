@@ -1,6 +1,7 @@
 ﻿using System.Windows;
  using System.Windows.Input;
  using KursachWPF.Models;
+ using KursachWPF.Models.Context;
  using KursachWPF.View.LogIn;
  using KursachWPF.View.MainWindowView.AccountView;
  using KursachWPF.ViewModels.Authorization;
