@@ -13,7 +13,7 @@ public class ChangeAvatarMethod : ViewModelBase
 {
     private KursachContext _db;
     private static string _loginUser = LoginVM._login;
-    private Account _userAccount;
+    public Account _userAccount;
 
     public Account UserAccount
     {

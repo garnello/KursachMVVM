@@ -2,8 +2,10 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              StartupUri="/View/LogIn/LogIn.xaml">
+    
+    
     <Application.Resources>
-            <ResourceDictionary>
+        <ResourceDictionary>
                 <ResourceDictionary.MergedDictionaries>
                     
                     <!--// Link on style //-->
@@ -39,7 +41,6 @@
                 
                 <SolidColorBrush x:Key="GeneralColor" Color="#080808"/>
                 <SolidColorBrush x:Key="BackgroundColor" Color="#fefefe"/>
-                
                 
                 
             </ResourceDictionary>

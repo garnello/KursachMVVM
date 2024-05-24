@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:avm="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM"
+             xmlns:methods="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods"
+             xmlns:components="clr-namespace:KursachWPF.Components"
              mc:Ignorable="d"
              d:DesignHeight="*" d:DesignWidth="*">
     
@@ -11,8 +13,12 @@
         <avm:NavigationAccountVM/>
     </UserControl.DataContext>
     
+    <UserControl.Resources>
+        <components:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
+    </UserControl.Resources>
     
     <Grid Background="{StaticResource BackgroundColor}">
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="570"/>
             <ColumnDefinition Width="960"/>
@@ -41,14 +47,21 @@
                                    FontWeight="Bold"/>
                     </Button>
                     
-                    <Ellipse Height="81" Width="81"
-                             VerticalAlignment="Top"
-                             HorizontalAlignment="Right"
-                             Margin="0 10 10 0">
-                        <Ellipse.Fill>
-                            <ImageBrush ImageSource="/Images/Account/Avatar.png"/>
-                        </Ellipse.Fill>
-                    </Ellipse>
+                    <Grid>
+                        <Grid.DataContext>
+                            <methods:ChangeAvatarMethod/>
+                        </Grid.DataContext>
+                        
+                        <Ellipse Height="81" Width="81"
+                                 VerticalAlignment="Top"
+                                 HorizontalAlignment="Right"
+                                 Margin="0 10 10 0">
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding UserAccount.Avatar, 
+                                Converter={StaticResource ByteArrayToImageConverter}}"/>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
                 </Grid> 
                 
                 <!--// Page Email //-->

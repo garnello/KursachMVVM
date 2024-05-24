@@ -93,7 +93,6 @@
                         <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center"
                               Margin="0 0 0 43">
                                 <Button Command="{Binding CurrentAccountCommand}"
-                                        
                                         Style="{StaticResource AccountButton}"/>
                                 
                                 <Button BorderThickness="0" Focusable="False"
