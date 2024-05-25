@@ -19,8 +19,8 @@ public class ChangeEmailMethod : ViewModelBase
     private static string _loginUser = LoginVM._login;
 
     private string _emailText;
-    private string _confirmationCode;
     private string _generatedCode;
+    private string _confirmationCode;
     private Visibility _stackPanelVisibility;
     private static readonly Regex EmailRegex = new Regex(@"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$");
 

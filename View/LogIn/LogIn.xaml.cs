@@ -33,4 +33,10 @@ public partial class LogIn
     {
         if (Mouse.LeftButton == MouseButtonState.Pressed) LogIn.LWindow.DragMove();
     }
+
+    private void RecoveryPasswordWindow(object sender, RoutedEventArgs e)
+    {
+        RecoveryPasswordView RPWindow = new RecoveryPasswordView();
+        RPWindow.Show();
+    }
 }

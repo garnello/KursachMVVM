@@ -60,7 +60,7 @@
                 <TextBlock Text="Введите код подтверждения" FontFamily="Inter" 
                            FontSize="32" FontWeight="Medium"/>
                 
-                <TextBox Foreground="Black" Width="293" Height="132" MaxLength="4" Margin="0 20 0 0"
+                <TextBox Tag="****" Foreground="Black" Width="293" Height="132" MaxLength="4" Margin="0 20 0 0"
                          FontSize="64" FontWeight="Bold" HorizontalContentAlignment="Center"
                          Text="{Binding ConfirmationCode}"
                          Style="{StaticResource TextBoxStyle}"/>

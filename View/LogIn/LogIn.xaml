@@ -6,7 +6,7 @@
         xmlns:components="clr-namespace:KursachWPF.Components"
         xmlns:authorization="clr-namespace:KursachWPF.ViewModels.Authorization"
         mc:Ignorable="d"
-        AllowsTransparency="True" Title="Sign In application"
+        AllowsTransparency="True"
         WindowStartupLocation="CenterScreen" Background="Transparent"
         Height="687" Width="1250" MinHeight="687" MinWidth="1250"
         MaxHeight="687" MaxWidth="1250" WindowStyle="None" MouseDown="MovingWindow">
@@ -93,6 +93,7 @@
                 <!--// Button password recovery //-->
                 
                 <Button Grid.Row="1" Content="Забыли пароль?" Margin="0 0 0 20"
+                        Click="RecoveryPasswordWindow"
                         Style="{StaticResource TxtButton}"/>
             </Grid>
         </Grid>

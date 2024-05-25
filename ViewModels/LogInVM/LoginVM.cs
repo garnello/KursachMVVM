@@ -36,7 +36,7 @@ public class LoginVM : ViewModelBase
     public void OnLogin(object parameter)
     {
         
-        var user = _db.Accounts.FirstOrDefault(u => u.Login == _login && u.Password == _password);
+        Account user = _db.Accounts.FirstOrDefault(u => u.Login == _login && u.Password == _password);
         if (user != null)
         {
             MessageBox.Show("Login successful!");

@@ -15,11 +15,11 @@ public partial class MainWindow : Window
     private KursachContext db;
     public static MainWindow MWindow;
     public static LogIn.LogIn LWindow;
-
     public MainWindow()
     {
         db = new KursachContext();
         InitializeComponent();
+        
         MWindow = this;
         LWindow = new LogIn.LogIn();
         

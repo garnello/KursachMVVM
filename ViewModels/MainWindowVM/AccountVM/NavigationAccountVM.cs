@@ -20,7 +20,7 @@ public class NavigationAccountVM : ViewModelBase
     public ICommand PasswordCommand { get; set; }
     
     
-    private void Avatar(object obj) => AccountView = new Avatar();
+    public void Avatar(object obj) => AccountView = new Avatar();
     private void Email(object obj) => AccountView = new Email();
     private void Password(object obj) => AccountView = new Password();
 

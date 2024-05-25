@@ -6,6 +6,7 @@
              xmlns:avm="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM"
              xmlns:methods="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods"
              xmlns:components="clr-namespace:KursachWPF.Components"
+             xmlns:navAccVM="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM"
              mc:Ignorable="d"
              d:DesignHeight="*" d:DesignWidth="*">
     

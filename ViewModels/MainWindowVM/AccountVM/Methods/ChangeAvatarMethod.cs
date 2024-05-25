@@ -2,10 +2,13 @@
 using System.IO;
 using System.Windows.Forms;
 using System.Windows.Input;
+using KursachWPF.Components;
 using KursachWPF.Models;
 using KursachWPF.Models.Context;
+using KursachWPF.View.MainWindowView.AccountView;
 using KursachWPF.ViewModels.Authorization;
 using KursachWPF.ViewModels.General;
+using System.Linq;
 
 namespace KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods;
 
@@ -42,9 +45,11 @@ public class ChangeAvatarMethod : ViewModelBase
             {
                 UserAccount.Avatar = new byte[fileStream.Length];
                 await fileStream.ReadAsync(UserAccount.Avatar, 0, (int)fileStream.Length);
+                OnPropertyChanged(nameof(UserAccount));
             }
             OnPropertyChanged(nameof(UserAccount));
             await _db.SaveChangesAsync();
+            MessageBox.Show("Чтобы изменения полностью пременились, перезагрузить приложение");
         }
     }
 

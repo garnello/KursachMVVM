@@ -220,3 +220,5 @@ C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Imag
 C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Images\HomeImages\Unloading.png
 C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Images\HomeImages\Loading.png
 C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\View\LogIn\RecoveryPasswordView.g.cs
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\View\LogIn\RecoveryPasswordView.baml

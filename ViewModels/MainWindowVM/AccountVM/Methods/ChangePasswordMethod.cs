@@ -93,6 +93,7 @@
                  user.Password = NewPassword;
                  _db.SaveChanges();
                  MessageBox.Show("Пароль успешно сменен!");
+                 StackPanelVisibility = Visibility.Collapsed;
              }
          }
          catch (Exception e)
