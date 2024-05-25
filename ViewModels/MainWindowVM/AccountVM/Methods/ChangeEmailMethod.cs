@@ -111,7 +111,7 @@ public class ChangeEmailMethod : ViewModelBase
             // Property
             
             SmtpClient client = new SmtpClient("smtp.bk.ru", 587);
-            client.Credentials = new NetworkCredential("yarbashalilov@bk.ru", "whXEkQ1U9DpynasMq0jd");
+            client.Credentials = new NetworkCredential("yarbashalilov@bk.ru", "MyPassword");
             client.EnableSsl = true;
             
             // Logic
