@@ -238,3 +238,8 @@ C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\Styl
 C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\View\MainWindowView\MainWindowPages\ListPages\Employee.g.cs
 C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\View\MainWindowView\MainWindowPages\ListPages\Employee.baml
 C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\Styles\MainWindow\MainWindowPagesStyle\DataGridStyle.baml
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Images\ListImages\pencilicon.png
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Images\ListImages\deleteIcon.png
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\Styles\MainWindow\MainWindowPagesStyle\CornerButtonList.baml
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Images\ListImages\CornerButtonImage.png
+C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\bin\Debug\net8.0-windows\Images\ListImages\addIcon.png

@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 using KursachWPF.Models;
-using KursachWPF.Models.Context;
 using KursachWPF.View.Auth;
 using KursachWPF.View.MainWindowView.NavigationPanel;
 using KursachWPF.ViewModels.General;

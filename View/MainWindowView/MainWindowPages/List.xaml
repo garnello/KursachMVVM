@@ -10,11 +10,10 @@
         <pages:ListVM/>
     </UserControl.DataContext>
     
-    <ScrollViewer>
-        <Grid Background="{StaticResource BackgroundColor}">
+    <Grid Background="{StaticResource BackgroundColor}">
             <Grid.RowDefinitions>
                 <RowDefinition Height="110"/>
-                <RowDefinition Height="100"/>
+                <RowDefinition Height="60"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
         
@@ -33,20 +32,20 @@
                            VerticalAlignment="Center" HorizontalAlignment="Left"
                            ItemHeight="50" Margin="15 0 0 10">
                     
-                    <!--// Account button //-->
+                    <!--// Employee button //-->
                     
                     <Grid>
                         <Button Style="{StaticResource ListButton}" 
-                                Content="Аккаунты"
-                                Command="{Binding AccountViewCommand}"/>
-                    </Grid>
-                    
-                    <!--// Employee button //-->
-                    
-                    <Grid  Margin="10 0 0 0">
-                        <Button Style="{StaticResource ListButton}" 
                                 Content="Сотрудники"
                                 Command="{Binding EmployeeViewCommand}"/>
+                    </Grid>
+                    
+                    <!--// Account button //-->
+                    
+                    <Grid Margin="10 0 0 0">
+                        <Button Style="{StaticResource ListButton}" 
+                                Content="Аккаунты"
+                                Command="{Binding AccountViewCommand}"/>
                     </Grid>
                     
                     <!--// Uniform button //-->
@@ -72,6 +71,8 @@
                                 Content="Списание"
                                 Command="{Binding WriteOffViewCommand}"/>
                     </Grid>
+                    
+                    
                 </WrapPanel>
             </Grid>
             
@@ -80,146 +81,6 @@
             <Grid Grid.Row="2">
                 <ContentControl x:Name="ListPages"
                                 Content="{Binding ListView}"/>
-                
-                <!--<WrapPanel Orientation="Horizontal" MaxWidth="987" 
-                           Visibility="{Binding CollectionsVisibility}"
-                           VerticalAlignment="Center" HorizontalAlignment="Center"
-                           ItemHeight="273" ItemWidth="329" Margin="15 0 15 30">
-                    ~1~// Employees tile button //@1@
-                
-                <Grid>
-                    <Button Style="{StaticResource TileButtonStyle}"
-                            Command="{Binding EmployeeViewCommand}">
-                        <TextBlock Text="Сотрудники" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Employees.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>
-                
-                ~1~// Accounts tile button //@1@
-                
-                <Grid>
-                    <Button Style="{StaticResource TileButtonStyle}"
-                            Command="{Binding AccountViewCommand}">
-                        <TextBlock Text="Аккаунты" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Accounts.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>
-                
-                ~1~// Uniform tile button //@1@
-                
-                <Grid>
-                    <Button Style="{StaticResource TileButtonStyle}"
-                            Command="{Binding UniformViewCommand}">
-                        <TextBlock Text="Спецодежда" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/HomeImages/TShirt.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>
-                
-                ~1~// Issuances tile button //@1@
-                
-                ~1~<Grid>
-                    <Button Style="{StaticResource TileButtonStyle}">
-                        <TextBlock Text="Выдачи" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Issuance.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>@1@
-                
-                ~1~// Returns tile button //@1@
-                
-                ~1~<Grid>
-                    <Button Style="{StaticResource TileButtonStyle}">
-                        <TextBlock Text="Возвраты" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Returns.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>@1@
-                
-                ~1~// Replacement tile button //@1@
-                
-                <Grid>
-                    <Button Style="{StaticResource TileButtonStyle}"
-                            Command="{Binding ReceiptViewCommand}">
-                        <TextBlock Text="Поступление" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Substitutions.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>
-                
-                ~1~// Reports tile button //@1@
-                
-                ~1~<Grid>
-                    <Button Style="{StaticResource TileButtonStyle}">
-                        <TextBlock Text="Отчёты" Margin="5 0 0 5"
-                                   HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                   FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Reports.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>@1@
-                
-                    ~1~// WriteOff tile button //@1@
-                
-                    <Grid>
-                        <Button Style="{StaticResource TileButtonStyle}"
-                                Command="{Binding WriteOffViewCommand}">
-                            <TextBlock Text="Списание" Margin="5 0 0 5"
-                                               HorizontalAlignment="Left" VerticalAlignment="Bottom"
-                                               FontWeight="Bold"/>
-                    </Button>
-                        
-                    <Image Source="/Images/ListImages/Orders.png"
-                           Margin="0 12 12 0"
-                           Width="77" Height="77" 
-                           VerticalAlignment="Top"
-                           HorizontalAlignment="Right"/>
-                </Grid>
-                </WrapPanel>-->
             </Grid>
         </Grid>
-    </ScrollViewer>
-    
 </UserControl>

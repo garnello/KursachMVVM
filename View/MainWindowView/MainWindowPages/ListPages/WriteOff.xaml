@@ -5,9 +5,107 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:KursachWPF.View.MainWindowView.MainWindowPages.ListPages"
              xmlns:source="clr-namespace:KursachWPF.ViewModels.NavPanelVM.ListVM"
+             xmlns:components="clr-namespace:KursachWPF.Components"
              mc:Ignorable="d"
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="*" d:DesignWidth="*">
+    <UserControl.Resources>
+        <components:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter" />
+    </UserControl.Resources>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <Grid Grid.Row="0" Margin="10 0 10 0">
+                <!--Search Textbox-->
+                
+                <TextBox Tag="Search ..." HorizontalAlignment="Left"
+                         Background="#f4f7fc" Foreground="Black"
+                         Style="{StaticResource TextBoxStyle}"/>
+            
+                <!-- Button import -->
+                
+                <Button Margin="0 0 545 0" Width="120"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource CornerButtonList}">
+                    <Grid Width="120">
+                        <TextBlock Text="Импорт" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" FontFamily="Inter"
+                                   FontSize="24" FontWeight="Bold"
+                                   Foreground="#ffffff"/>
+                    </Grid>
+                </Button>
+            
+                <!-- Button export -->
+        
+                <Button Margin="0 0 420 0" Width="120" 
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource CornerButtonList}">
+                    <Grid Width="120">
+                        <TextBlock Text="Экспорт" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" FontFamily="Inter"
+                                   FontSize="24" FontWeight="Bold"
+                                   Foreground="#ffffff"/>
+                    </Grid>
+                </Button>
+            
+                <!-- Button add -->
+            
+                <Button HorizontalAlignment="Right"
+                        Style="{StaticResource CornerButtonList}">
+                    <Grid Width="400">
+                        <Image Source="/Images/ListImages/addIcon.png"
+                               Width="35" Height="35"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center" 
+                               Margin="40 0 0 0"/>
+                        <TextBlock Text="Добавить аккаунт" VerticalAlignment="Center"
+                                   HorizontalAlignment="Center" FontFamily="Inter"
+                                   FontSize="28" FontWeight="Bold"
+                                   Foreground="#ffffff"
+                                   Margin="10 0 0 0"/>
+                    </Grid>
+                </Button>
+        </Grid>
+        
+        
+        <DataGrid Grid.Row="1" RowStyle="{DynamicResource DataGridRowStyle}" 
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
+                  CellStyle="{DynamicResource DataGridCellStyle}"
+                  Style="{DynamicResource DataGridStyle}" Margin="10 0 10 0"
+                  ItemsSource="{Binding WriteOffs}">
+            <DataGrid.DataContext>
+                <source:WriteOffVM/>
+            </DataGrid.DataContext>
+            
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="auto" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="# Спецодежды" Binding="{Binding IdWorkwear}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Причина списания" Binding="{Binding ReasonForWirteOff}" IsReadOnly="True" Width="*"/>
+                <DataGridTextColumn Header="Дата списания" Binding="{Binding DateOfWriteOff}" IsReadOnly="True" Width="*"/>
+                <DataGridTemplateColumn Header="Операция" IsReadOnly="True" Width="auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource GridEditButton}"
+                                        Width="25" Height="25">
+                                    <Image Source="/Images/ListImages/pencilicon.png"
+                                           Width="13" Height="13" HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"/>
+                                </Button>
+                                <Button Margin="5 0 0 0" Style="{StaticResource GridRemoveButton}"
+                                        Width="25" Height="25">
+                                    <Image Source="/Images/ListImages/deleteIcon.png"
+                                           Width="13" Height="13" VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"/>
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </UserControl>

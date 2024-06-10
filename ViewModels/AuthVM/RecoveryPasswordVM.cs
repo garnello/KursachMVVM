@@ -4,7 +4,6 @@ using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Input;
 using KursachWPF.Models;
-using KursachWPF.Models.Context;
 using KursachWPF.ViewModels.General;
 
 namespace KursachWPF.ViewModels.AuthVM;

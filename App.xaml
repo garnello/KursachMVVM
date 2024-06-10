@@ -19,6 +19,7 @@
                     <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/MenuText.xaml"/>
                     <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/ListSwitchButton.xaml"/>
                     <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/DataGridStyle.xaml"/>
+                    <ResourceDictionary Source="Styles/MainWindow/MainWindowPagesStyle/CornerButtonList.xaml"/>
                     
                     <!--// StartUp //-->
                     

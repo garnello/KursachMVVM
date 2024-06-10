@@ -44,5 +44,7 @@ public class ListVM : ViewModelBase
         WriteOffViewCommand = new RelayCommand(WriteOff);
 
         ListView = new Employee();
+        OnPropertyChanged(nameof(ListView));
+        
     }
 }

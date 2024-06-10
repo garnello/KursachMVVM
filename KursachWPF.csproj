@@ -277,6 +277,26 @@
       <Content Include="Images\HomeImages\Loading.png">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </Content>
+      <None Remove="Images\ListImages\trash-can.png" />
+      <None Remove="Images\ListImages\pencil.png" />
+      <None Remove="Images\ListImages\pencilicon.png" />
+      <Content Include="Images\ListImages\pencilicon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\ListImages\deleteIcon.png" />
+      <Content Include="Images\ListImages\deleteIcon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\ListImages\plus.png" />
+      <None Remove="Images\ListImages\plusIcon.png" />
+      <None Remove="Images\ListImages\CornerButtonImage.png" />
+      <Content Include="Images\ListImages\CornerButtonImage.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\ListImages\addIcon.png" />
+      <Content Include="Images\ListImages\addIcon.png">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
     </ItemGroup>
 
     <ItemGroup>

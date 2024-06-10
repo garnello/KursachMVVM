@@ -1,5 +1,5 @@
 ﻿using System.Windows;
-using KursachWPF.Models.Context;
+using KursachWPF.Models;
 using KursachWPF.ViewModels.AuthVM;
 using KursachWPF.ViewModels.General;
 

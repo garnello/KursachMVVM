@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 
-namespace KursachWPF.Models.Context;
+namespace KursachWPF.Models;
 
 public partial class KursachContext : DbContext
 {
@@ -21,13 +23,13 @@ public partial class KursachContext : DbContext
 
     public virtual DbSet<HistoryOfReturn> HistoryOfReturns { get; set; }
 
-    public virtual DbSet<ReplacementHistory> ReplacementHistories { get; set; }
-
     public virtual DbSet<Report> Reports { get; set; }
 
     public virtual DbSet<Workwear> Workwears { get; set; }
 
-    public virtual DbSet<WorkwearOrderHistory> WorkwearOrderHistories { get; set; }
+    public virtual DbSet<WorkwearReceiptHistory> WorkwearReceiptHistories { get; set; }
+
+    public virtual DbSet<WriteOffHistory> WriteOffHistories { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -75,9 +77,6 @@ public partial class KursachContext : DbContext
             entity.Property(e => e.Number)
                 .HasMaxLength(11)
                 .HasColumnName("number");
-            entity.Property(e => e.Patronymic)
-                .HasMaxLength(100)
-                .HasColumnName("patronymic");
             entity.Property(e => e.Post)
                 .HasMaxLength(50)
                 .HasColumnName("post");
@@ -130,31 +129,6 @@ public partial class KursachContext : DbContext
                 .HasConstraintName("history_of_return_id_workwear_fkey");
         });
 
-        modelBuilder.Entity<ReplacementHistory>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("replacement_history_pkey");
-
-            entity.ToTable("replacement_history");
-
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.DateOfReplace).HasColumnName("date_of_replace");
-            entity.Property(e => e.IdEmployee).HasColumnName("id_employee");
-            entity.Property(e => e.IdWorkwear).HasColumnName("id_workwear");
-            entity.Property(e => e.ReasonOfReplacement)
-                .HasMaxLength(200)
-                .HasColumnName("reason_of_replacement");
-
-            entity.HasOne(d => d.IdEmployeeNavigation).WithMany(p => p.ReplacementHistories)
-                .HasForeignKey(d => d.IdEmployee)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("replacement_history_id_employee_fkey");
-
-            entity.HasOne(d => d.IdWorkwearNavigation).WithMany(p => p.ReplacementHistories)
-                .HasForeignKey(d => d.IdWorkwear)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("replacement_history_id_workwear_fkey");
-        });
-
         modelBuilder.Entity<Report>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("issuance_report_pkey");
@@ -194,25 +168,41 @@ public partial class KursachContext : DbContext
                 .HasColumnName("type");
         });
 
-        modelBuilder.Entity<WorkwearOrderHistory>(entity =>
+        modelBuilder.Entity<WorkwearReceiptHistory>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("workwear_order_history_pkey");
 
-            entity.ToTable("workwear_order_history");
+            entity.ToTable("workwear_receipt_history");
 
-            entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.Cost).HasColumnName("cost");
+            entity.Property(e => e.Id)
+                .HasDefaultValueSql("nextval('workwear_order_history_id_seq'::regclass)")
+                .HasColumnName("id");
             entity.Property(e => e.DateOfOrder).HasColumnName("date_of_order");
-            entity.Property(e => e.IdEmployee).HasColumnName("id_employee");
             entity.Property(e => e.Quantity).HasColumnName("quantity");
             entity.Property(e => e.TypeWorkwear)
                 .HasMaxLength(75)
                 .HasColumnName("type_workwear");
+        });
 
-            entity.HasOne(d => d.IdEmployeeNavigation).WithMany(p => p.WorkwearOrderHistories)
-                .HasForeignKey(d => d.IdEmployee)
+        modelBuilder.Entity<WriteOffHistory>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("replacement_history_pkey");
+
+            entity.ToTable("write-off_history");
+
+            entity.Property(e => e.Id)
+                .HasDefaultValueSql("nextval('replacement_history_id_seq'::regclass)")
+                .HasColumnName("id");
+            entity.Property(e => e.DateOfWriteOff).HasColumnName("date_of_write-off");
+            entity.Property(e => e.IdWorkwear).HasColumnName("id_workwear");
+            entity.Property(e => e.ReasonForWirteOff)
+                .HasMaxLength(100)
+                .HasColumnName("reason_for_wirte-off");
+
+            entity.HasOne(d => d.IdWorkwearNavigation).WithMany(p => p.WriteOffHistories)
+                .HasForeignKey(d => d.IdWorkwear)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("workwear_order_history_id_employee_fkey");
+                .HasConstraintName("replacement_history_id_workwear_fkey");
         });
 
         OnModelCreatingPartial(modelBuilder);

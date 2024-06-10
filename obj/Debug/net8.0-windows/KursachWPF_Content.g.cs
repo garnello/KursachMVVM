@@ -36,5 +36,9 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/account/passwordopacity.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/homeimages/unloading.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/homeimages/loading.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/listimages/pencilicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/listimages/deleteicon.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/listimages/cornerbuttonimage.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/listimages/addicon.png")]
 
 

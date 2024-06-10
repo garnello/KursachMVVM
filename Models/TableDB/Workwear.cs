@@ -19,5 +19,5 @@ public partial class Workwear
 
     public virtual ICollection<HistoryOfReturn> HistoryOfReturns { get; set; } = new List<HistoryOfReturn>();
 
-    public virtual ICollection<ReplacementHistory> ReplacementHistories { get; set; } = new List<ReplacementHistory>();
+    public virtual ICollection<WriteOffHistory> WriteOffHistories { get; set; } = new List<WriteOffHistory>();
 }
