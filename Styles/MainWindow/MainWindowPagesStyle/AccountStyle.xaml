@@ -3,7 +3,7 @@
                     xmlns:components="clr-namespace:KursachWPF.Components"
                     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-                    xmlns:methods="clr-namespace:KursachWPF.ViewModels.MainWindowVM.AccountVM.Methods"
+                    xmlns:accVM="clr-namespace:KursachWPF.ViewModels.NavPanelVM.AccountVM"
                     mc:Ignorable="d">
     
     <components:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter" />
@@ -103,11 +103,11 @@
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
                                 <Grid.DataContext>
-                                    <methods:ChangeAvatarMethod/>
+                                    <accVM:AvatarVM/>
                                 </Grid.DataContext>
                                 
                                 <Ellipse Grid.Column="0" Width="70" Height="70">
-                                    <Ellipse.Fill>
+                                    <Ellipse.Fill> 
                                         <ImageBrush ImageSource="{Binding UserAccount.Avatar,  
                                                 Converter={StaticResource ByteArrayToImageConverter}}"/>
                                     </Ellipse.Fill>

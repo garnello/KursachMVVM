@@ -3,8 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:KursachWPF.ViewModels.NavPanelVM"
              mc:Ignorable="d"
              d:DesignHeight="*" d:DesignWidth="*">
+    
+    <UserControl.DataContext>
+        <vm:HomeVM/>
+    </UserControl.DataContext>
     
     <ScrollViewer>
         <Grid Background="{StaticResource BackgroundColor}">
@@ -25,7 +30,7 @@
             <!--// Welcome block //-->
             
             <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
-            <TextBlock x:Name="TextWelcome"
+            <TextBlock Text="{Binding Name}"
                        Style="{StaticResource Contents}"
                        Foreground="{StaticResource GeneralColor}"/>
             <TextBlock VerticalAlignment="Top" HorizontalAlignment="Left"

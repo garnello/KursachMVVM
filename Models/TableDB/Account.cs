@@ -15,4 +15,6 @@ public partial class Account
     public string? Email { get; set; }
 
     public byte[]? Avatar { get; set; }
+
+    public string FullName => $"{Surname} {Name}";
 }

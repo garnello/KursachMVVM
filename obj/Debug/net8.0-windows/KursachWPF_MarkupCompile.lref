@@ -1,13 +1,20 @@
-﻿
+﻿C:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 
-FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\Components\BindablePasswordBox.xaml;;
 FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\Styles\MainWindow\MainWindowPagesStyle\AccountStyle.xaml;;
-FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\ViewModels\General\DataTemplate.xaml;;
-FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\LogIn\LogIn.xaml;;
-FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\LogIn\RecoveryPasswordView.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\Auth\LogInView.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\Auth\NavigationPanel\NavAuth.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\Auth\RecoveryPasswordView.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\Auth\SignUpView.xaml;;
 FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\AccountView\Avatar.xaml;;
 FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\AccountView\Email.xaml;;
 FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\AccountView\Password.xaml;;
 FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\CurrentAccount.xaml;;
-FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\NavigationPanel\MainWindow.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\Home.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\List.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\ListPages\Account.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\ListPages\Employee.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\ListPages\Receipt.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\ListPages\Uniform.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\MainWindowPages\ListPages\WriteOff.xaml;;
+FC:\Users\yarba\RiderProjects\KursachWPF\KursachWPF\View\MainWindowView\NavigationPanel\NavigationPanel.xaml;;
 

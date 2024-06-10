@@ -34,7 +34,7 @@
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
       </Page>
-      <Page Update="View\MainWindowView\NavigationPanel\MainWindow.xaml">
+      <Page Update="View\MainWindowView\NavigationPanel\NavigationPanel.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
@@ -100,6 +100,16 @@
         <SubType>Designer</SubType>
       </Page>
       <Page Update="Styles\General\PasswordBox.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="View\LogInAndSignIn\NavigationPanel\NavAuth.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="View\Auth\SignUpView.xaml">
         <Generator>MSBuild:Compile</Generator>
         <XamlRuntime>Wpf</XamlRuntime>
         <SubType>Designer</SubType>
@@ -290,10 +300,6 @@
     <ItemGroup>
       <None Remove="Images\menu.png" />
       <None Remove="Images\img_home.png" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="View\MainWindowView\MainWindowPages\ListPages\" />
     </ItemGroup>
 
 </Project>

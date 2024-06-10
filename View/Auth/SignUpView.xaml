@@ -1,0 +1,180 @@
+﻿<UserControl x:Class="KursachWPF.View.Auth.SignUpView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:components="clr-namespace:KursachWPF.Components"
+             xmlns:signUp="clr-namespace:KursachWPF.ViewModels.AuthVM"
+             mc:Ignorable="d"
+             d:DesignHeight="*" d:DesignWidth="*">
+    <UserControl.Resources>
+        <components:ByteArrayToImageConverter x:Key="ByteArrayToImageConverter"/>
+    </UserControl.Resources>
+    
+    <UserControl.DataContext>
+        <signUp:SignUpVM/>
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="148"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.Row="0" VerticalAlignment="Center"
+                   HorizontalAlignment="Center" FontSize="48"
+                   FontFamily="Inter" FontWeight="Bold" TextAlignment="Center">
+                    Давайте <LineBreak/> занкомиться
+        </TextBlock>
+        
+        <!--// Name and Surname //-->
+        <StackPanel Grid.Row="1" Orientation="Vertical" 
+                    Visibility="{Binding VisibilityStackPanelFIO}"
+                    VerticalAlignment="Top" Margin="0 28 0 0">
+            
+            <TextBlock Text="Ваша фамилия" FontFamily="Inter"
+                       FontSize="24" FontWeight="Medium"
+                       Margin="17 0 0 5"/>
+            <TextBox Tag="Басхалилов" Text="{Binding AccountSurname}"
+                     Style="{DynamicResource TextBoxStyle}"/>
+                    
+            <TextBlock Text="Ваше имя" FontFamily="Inter"
+                       FontSize="24" FontWeight="Medium"
+                       Margin="17 0 0 5"/>
+            <TextBox Tag="Ярослав" Text="{Binding AccountName}"
+                     Style="{DynamicResource TextBoxStyle}"/>
+                    
+            <Button Style="{StaticResource StyleButtonLogIn}" Margin="0 40 0 0"
+                    Content="Далее" Command="{Binding CheckCorrectFIOCommand}"/>
+            
+            <TextBlock FontFamily="Inter" Text="{Binding TagCorrectFIO}"
+                       FontSize="18" FontWeight="Medium" HorizontalAlignment="Center"
+                       Margin="0 15 0 0" Foreground="#B5B5B5"/>
+        </StackPanel>
+                
+        <!--// Login and password //-->
+                
+        <StackPanel Grid.Row="1" Orientation="Vertical" 
+                    Visibility="{Binding VisibilityStackPanelLogAPas}"
+                    VerticalAlignment="Top" Margin="0 28 0 0">
+            <TextBlock Text="Логин" FontFamily="Inter"
+                       FontSize="24" FontWeight="Medium"
+                       Margin="17 0 0 5"/>
+            <TextBox Tag="Garnello" Text="{Binding AccountLogin}"
+                     Style="{DynamicResource TextBoxStyle}"/>
+                    
+            <TextBlock Text="Пароль" FontFamily="Inter"
+                       FontSize="24" FontWeight="Medium"
+                       Margin="17 0 0 5"/>
+                    
+            <components:BindablePasswordBox x:Name="PasswordTextBoxSignUp" Tag="Password"
+                                            Password="{Binding AccountPassword, 
+                                                    UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                    
+            <Button Style="{StaticResource StyleButtonLogIn}" Margin="0 40 0 0"
+                    Content="Далее" Command="{Binding CheckLogAPasCommand}"/>
+            
+            <TextBlock FontFamily="Inter" Text="{Binding TagLogAPas}"
+                       FontSize="18" FontWeight="Medium" HorizontalAlignment="Center"
+                       Margin="0 15 0 0"/>
+        </StackPanel>
+                
+        <!--// Email //-->
+                
+        <StackPanel Grid.Row="1" Orientation="Vertical" 
+                    Visibility="{Binding VisibilityStackPanelEmail}"
+                    VerticalAlignment="Top" Margin="0 28 0 0">
+            
+            <TextBlock Text="Ваша почта" FontFamily="Inter"
+                       FontSize="24" FontWeight="Medium"
+                       Margin="17 0 0 5"/>
+            <TextBox Tag="baskapiiiiik@icloud.com" Text="{Binding AccountEmail}"
+                     Style="{DynamicResource TextBoxStyle}"/>
+                    
+            <TextBlock TextWrapping="Wrap" Width="354" Height="17"
+                       FontFamily="Inter" FontSize="14" FontWeight="Medium"
+                       Foreground="#B5B5B5" HorizontalAlignment="Left"
+                       Margin="40 10 0 25">
+                Мы отправим вам письмо с кодом подтверждения
+            </TextBlock>
+            
+            <StackPanel Visibility="{Binding VisibilityStackPanelEmailCode}"
+                        Orientation="Vertical" HorizontalAlignment="Center" 
+                        VerticalAlignment="Bottom">
+                <TextBlock Text="Введите код подтверждения" FontFamily="Inter" 
+                           FontSize="32" FontWeight="Medium"/>
+                
+                <TextBox Tag="****" Foreground="Black" Width="293" Height="132" MaxLength="4" Margin="0 20 0 0"
+                         FontSize="64" FontWeight="Bold" HorizontalContentAlignment="Center"
+                         Text="{Binding ConfirmationCode}"
+                         Style="{StaticResource TextBoxStyle}"/>
+                
+                <Button Margin="0 20 0 0" Content="OK"
+                        Command="{Binding CheckEmailCodeCommand}"
+                        Style="{StaticResource CornerButton}"/>
+            </StackPanel>
+                    
+            <Button Style="{StaticResource StyleButtonLogIn}" Margin="0 40 0 0"
+                    Content="Далее" Command="{Binding CheckEmailCommand}"
+                    Visibility="{Binding VisibilityButtonEmail}"/>
+            
+            <TextBlock FontFamily="Inter" Text="{Binding TagCorrectFIO}"
+                       FontSize="18" FontWeight="Medium" HorizontalAlignment="Center"
+                       Margin="0 15 0 0" />
+        </StackPanel>
+        
+        <!--// Avatar //-->
+        
+        <StackPanel Grid.Row="1" Orientation="Vertical" 
+                    Visibility="{Binding VisibilityStackPanelAvatar}"
+                    VerticalAlignment="Top" Margin="0 28 0 0">
+            <!--// Contents //-->
+                    
+            <TextBlock Text="Ваш аватар" FontSize="24" Margin="34 40 0 10"
+                       Foreground="{StaticResource GeneralColor}"
+                       Style="{StaticResource Contents}"/>
+            
+            <Border Height="158" Width="335" Background="#FFFFFF"
+                    Style="{StaticResource TileInformationStyle}">
+                <Grid>
+            
+                    <!--// Avatar //-->
+            
+                    <Ellipse Height="70" Width="70"
+                             HorizontalAlignment="Left"
+                             VerticalAlignment="Center"
+                             Margin="50 0 0 40" >
+                        <Ellipse.Fill>
+                            <ImageBrush ImageSource="{Binding AccountImage, 
+                                        Converter={StaticResource ByteArrayToImageConverter}}"/>
+                        </Ellipse.Fill>
+                    </Ellipse>
+            
+                    <!--// Button with text //-->
+            
+                    <StackPanel Orientation="Horizontal"
+                                VerticalAlignment="Bottom"
+                                Width="335">
+                        <Button Content="Изменить" VerticalAlignment="Bottom"
+                                Command="{Binding SelectionAvatarCommand}"
+                                Style="{StaticResource CornerButton}"
+                                Margin="25 0 0 18"/>
+                
+                        <TextBlock TextWrapping="Wrap"
+                                   Width="122" Height="75"
+                                   FontFamily="Inter" FontSize="12"
+                                   FontWeight="Medium" TextAlignment="Right"
+                                   Margin="50 0 0 15">
+                            Изображение должно быть в формате .png, 
+                            .jpeg или .jpg размером не больше 25 мбайт.
+                        </TextBlock>
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <Button Margin="0 20 0 0" Content="Завершить"
+                    Command="{Binding AddingAccountCommand}"
+                    Style="{StaticResource CornerButton}"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

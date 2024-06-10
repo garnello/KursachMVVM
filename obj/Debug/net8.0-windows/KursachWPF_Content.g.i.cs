@@ -35,5 +35,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/account/accountavatar.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/account/emailopacity.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/account/passwordopacity.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/homeimages/unloading.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/homeimages/loading.png")]
 
 

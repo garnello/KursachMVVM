@@ -1,0 +1,153 @@
+﻿<Window x:Class="KursachWPF.View.MainWindowView.NavigationPanel.NavigationPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:menu="clr-namespace:KursachWPF.Components"
+        xmlns:components="clr-namespace:KursachWPF.Components"
+        xmlns:local="clr-namespace:KursachWPF.View.MainWindowView.NavigationPanel"
+        xmlns:navPanelVm="clr-namespace:KursachWPF.ViewModels.NavPanelVM"
+        mc:Ignorable="d"
+        Title="Kursach"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="False"
+        MinHeight="600" MinWidth="800"
+        Height="1080" Width="1920" WindowStyle="None"
+        Background="Transparent" MouseDown="MovingWindow">
+        
+        <!--// Link data context //-->
+        <Window.DataContext>
+                <navPanelVm:NavigationPanelVM />
+        </Window.DataContext>
+       
+        
+        <Grid>
+                
+                <!--// Base Grid //-->
+                
+                <Grid.RowDefinitions>
+                        <RowDefinition Height="70"/>
+                        <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="430" />
+                        <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!--// Navigation Panel //-->
+
+                <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="0" >
+
+                        <Border Background="#f4f7fc "
+                                CornerRadius="25 0 0 20" />
+                        <StackPanel HorizontalAlignment="Left"
+                                    VerticalAlignment="Top" Margin="33 75 0 0" >
+
+                                <!--// Home //-->
+
+                                <menu:Btn Style="{StaticResource BtnStyle}"
+                                          Command ="{Binding HomeCommand}"
+                                          IsChecked="True">
+
+                                        <Grid>
+                                                <Image Source="/Images/General/Home.png"
+                                                       Style="{StaticResource ImageStyle}" />
+
+                                                <TextBlock Text="Главная"
+                                                           Style="{StaticResource TextStyle}" />
+                                        </Grid>
+                                </menu:Btn>
+                                
+                                <!--// List //-->
+                                
+                                <menu:Btn Style="{StaticResource BtnStyle}"
+                                          Command="{Binding ListCommand}"
+                                          IsChecked="True">
+                                        <Grid>
+                                                <Image Source="/Images/General/List.png"
+                                                       Style="{StaticResource ImageStyle}" />
+
+                                                <TextBlock Text="Списки"
+                                                           Style="{StaticResource TextStyle}" />
+                                        </Grid>
+                                </menu:Btn>
+                                
+                                <!--// Settings //-->
+                                
+                                <menu:Btn Style="{StaticResource BtnStyle}"
+                                          Command="{Binding SettingCommand}"
+                                          IsChecked="True">
+
+                                        <Grid>
+                                                <Image Source="/Images/General/Settings.png"
+                                                       Style="{StaticResource ImageStyle}" />
+
+                                                <TextBlock Text="Настройки"
+                                                           Style="{StaticResource TextStyle}" />
+                                        </Grid>
+                                </menu:Btn>
+                        </StackPanel>
+                        
+                        <Grid VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                              Margin="0 0 0 43">
+                                <Button Command="{Binding CurrentAccountCommand}"
+                                        Style="{StaticResource AccountButton}"/>
+                                
+                                <Button BorderThickness="0" Focusable="False"
+                                        Style="{StaticResource TextButton}"
+                                        Command="{Binding CurrentAccountCommand}">
+                                        
+                                        <TextBlock Text="{Binding FullName}"
+                                                   VerticalAlignment="Center"
+                                                   TextWrapping="Wrap" Width="158"
+                                                   Margin="10 0 0 0"/>
+                                </Button>
+                                
+                                <Button Click="ButtonExit_OnClick" Margin="0 0 10 0"
+                                        Style="{StaticResource ExitButton}"/>
+                                
+                                
+                        </Grid>
+                </Grid>
+                
+                <!--// Contents //-->
+                
+                <Border Grid.Row="0" Grid.Column="0">
+                        <Label Content="Kursach v1.0" 
+                               FontSize="40" FontWeight="700"
+                               Margin="33 0 0 0"/>
+                        
+                </Border>
+                
+                
+                <!--// Current view //-->
+                
+                <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="1">
+                        <ContentControl x:Name="Pages"
+                                        Content="{Binding CurrentView}" />
+                </Grid>
+                
+                <!--// Window style //-->
+                
+                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal"
+                            VerticalAlignment="Top" HorizontalAlignment="Right">
+                        <Button Content="-" x:Name="BtnMinimize" 
+                                Margin="0 20 12 0"
+                                Click="BtnMinimize_OnClick" FontSize="22" 
+                                Style="{DynamicResource WindowButtonStyle}"
+                                Padding="10"/>
+
+                        <Button Content="□" FontSize="20"
+                                x:Name="BtnMaximized" Click="BtnMaximized_OnClick"
+                                Margin="0 20 15 0"
+                                Style="{DynamicResource WindowButtonStyle}"/>
+                        
+                        <Button Content="X" FontSize="15"
+                                x:Name="BtnClose" Click="BtnClose_OnClick"
+                                Margin="0 20 15 0"
+                                Style="{DynamicResource WindowButtonStyle}"/>
+                </StackPanel>
+                
+        </Grid>
+</Window>
